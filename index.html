@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>جامعة باتنة 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+  --primary: #3b82c4;    /* أزرق فاتح */
+  --secondary: #1e5fa3;  /* أزرق أغمق شوية */
+  --bg: #f4f6f9;
+  --card: #ffffff;
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: #222;
+    }
+
+    /* ===== شاشة البداية ===== */
+    #splash {
+      height: 100vh;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    #splash img {
+      width: 200px;
+      margin-bottom: 20px;
+      animation: fadeZoom 2s ease;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.35));
+    }
+
+    #splash h1 {
+      font-size: 28px;
+      margin: 0;
+      animation: fadeUp 2s ease;
+    }
+
+    @keyframes fadeZoom {
+      from { opacity: 0; transform: scale(0.7); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== الروابط ===== */
+    #links {
+      display: none;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #links h2 {
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px 22px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border: 1px solid rgba(31,78,121,0.15);
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card i {
+      font-size: 42px;
+      margin-bottom: 15px;
+      display: block;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    /* ألوان الأيقونات */
+    .icon-facebook { color: #1877f2; }
+    .icon-youtube  { color: #ff0000; }
+    .icon-site     { color: var(--primary); }
+    .icon-map      { color: #34a853; }
+
+    /* أنيميشن */
+    .card:hover i {
+      transform: scale(1.15) rotate(-3deg);
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+    }
+
+    .card:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- شاشة البداية -->
+  <div id="splash">
+    <img src="logo.png" alt="جامعة باتنة 2">
+    <h1>جامعة باتنة 2 – مصطفى بن بولعيد</h1>
+  </div>
+
+  <!-- الروابط -->
+  <section id="links">
+    <h2>الروابط الرسمية لجامعة باتنة 2 الشهيد مصطفى بن بولعيد</h2>
+
+    <div class="cards">
+      <a class="card" href="https://maps.app.goo.gl/5YZu6VnjSJMMzKpf9" target="_blank">
+        <i class="fa-solid fa-location-dot icon-map"></i>
+        الموقع الجغرافي
+      </a>
+
+      <a class="card" href="https://univ-batna2.dz" target="_blank">
+        <i class="fa-solid fa-globe icon-site"></i>
+        الموقع الإلكتروني
+      </a>
+
+      <a class="card" href="https://www.facebook.com/ubatna2.dz" target="_blank">
+        <i class="fa-brands fa-facebook icon-facebook"></i>
+        صفحة فيسبوك
+      </a>
+
+      <a class="card" href="https://www.youtube.com/@WebTVUB2" target="_blank">
+        <i class="fa-brands fa-youtube icon-youtube"></i>
+        قناة اليوتيوب
+      </a>
+    </div>
+
+    <footer>
+      © 2025 جامعة باتنة 2 – جميع الحقوق محفوظة
+    </footer>
+  </section>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("links").style.display = "block";
+    }, 2500);
+  </script>
+
+</body>
+</html>
